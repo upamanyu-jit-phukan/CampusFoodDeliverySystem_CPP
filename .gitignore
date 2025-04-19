@@ -1,0 +1,36 @@
+# Ignore build directories
+/build/
+*/build/
+
+# Ignore CMake files
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+
+# Ignore IDE/project files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore object and binary files
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.out
+
+# Ignore log files
+*.log
+
+# Ignore the generated Makefiles
+Makefile
+Makefile.user
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
