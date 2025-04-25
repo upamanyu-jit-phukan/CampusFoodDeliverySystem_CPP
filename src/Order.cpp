@@ -71,12 +71,14 @@ void DeliverySystem::viewMyOrders(const string& scholarID) {
 void DeliverySystem::placeOrder(const string& scholarID) {
     vector<OrderedItem> orderedItems;
     float totalCost = 0;
-    int foodId, quantity;
+    int foodId = -1, quantity;
+    string phoneNumber, hostelNumber;
 
     cout << "\n--- Place Order ---\n";
-    cout << "Enter 0 as Food ID when you're done ordering.\n";
 
-    while (true) {
+    cout << "\nEnter 0 as Food ID when you're done ordering.";
+
+    while (foodId!=0) {
         cout << "\nEnter Food ID to add to order (0 to finish): ";
         cin >> foodId;
 
@@ -107,6 +109,12 @@ void DeliverySystem::placeOrder(const string& scholarID) {
         cout << "No items added. Order not placed.\n";
         return;
     }
+    
+    cout << "\nEnter your phone number:";
+    cin >> phoneNumber;
+
+    cout << "\nEnter your hostel number:";
+    cin >> hostelNumber;
 
     Order newOrder;
     newOrder.orderId = nextOrderId++;
@@ -114,6 +122,8 @@ void DeliverySystem::placeOrder(const string& scholarID) {
     newOrder.timestamp = time(0);
     newOrder.items = orderedItems;
     newOrder.status = "Pending";
+    newOrder.hostelNumber = hostelNumber;
+    newOrder.phoneNumber = phoneNumber;
 
     orders.push_back(newOrder);
     saveOrdersToFile();
