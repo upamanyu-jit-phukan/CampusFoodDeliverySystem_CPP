@@ -1,13 +1,11 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
+#include <bits/stdc++.h>
 #include "../include/Menu.h"
 using namespace std;
 
 void Menu::loadFromFile() {
     ifstream fin("../data/menu.txt");
     if (!fin) {
-        std::cout << "Error: 'menu.txt' not found.\n";
+        cout << "Error: 'menu.txt' not found.\n";
         return;
     }
 

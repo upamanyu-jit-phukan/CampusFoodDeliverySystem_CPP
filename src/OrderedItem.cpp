@@ -1,5 +1,4 @@
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
 #include "../include/OrderedItem.h"
 using namespace std;
 

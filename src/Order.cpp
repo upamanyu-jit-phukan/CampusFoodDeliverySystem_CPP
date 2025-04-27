@@ -1,6 +1,4 @@
-#include <iostream>
-#include <iomanip>
-#include <ctime>
+#include <bits/stdc++.h>
 #include "../include/DeliverySystem.h"
 #include "../include/Order.h"
 using namespace std;
@@ -103,6 +101,7 @@ void DeliverySystem::placeOrder(const string& scholarID) {
         orderedItems.push_back(orderedItem);
 
         cout << "Added " << quantity << " x " << item->name << " to your order.\n";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
     }
 
     if (orderedItems.empty()) {
@@ -110,12 +109,15 @@ void DeliverySystem::placeOrder(const string& scholarID) {
         return;
     }
     
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     cout << "\nEnter your phone number:";
-    cin >> phoneNumber;
-
+    getline(cin, phoneNumber); 
+    
     cout << "\nEnter your hostel number:";
-    cin >> hostelNumber;
-
+    getline(cin, hostelNumber);
+    
     Order newOrder;
     newOrder.orderId = nextOrderId++;
     newOrder.scholarID = scholarID;

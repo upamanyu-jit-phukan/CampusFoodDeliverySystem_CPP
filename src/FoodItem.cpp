@@ -1,5 +1,4 @@
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
 #include "../include/FoodItem.h"
 using namespace std;
 
